@@ -1,0 +1,15 @@
+{
+    "name": "alexeyanufrienok/dverifalko",
+    "autoload": {
+        "psr-4": {
+            "app\\core\\": "app/core"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexey Anufrienok",
+            "email": "alex.anufrienok@gmail.com"
+        }
+    ],
+    "require": {}
+}
