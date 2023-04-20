@@ -9,6 +9,10 @@ class MainController extends Controller {
     }
 
     public function contactAction() {
-        $this->view->render('Контакты');
+        $vars = [
+            'name' => 'Вася',
+            'age' => '42'
+        ];
+        $this->view->render('Контакты', $vars);
     }
 }

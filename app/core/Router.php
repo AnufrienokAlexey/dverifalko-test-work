@@ -1,6 +1,7 @@
 <?php
 
 namespace app\core;
+use app\core\View;
 
 class Router
 {
@@ -40,13 +41,13 @@ class Router
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    echo 'Action не найден: '.$action;
+                    View::errorCode(404);
                 }
             } else {
-                echo 'Не найден контроллер: '.$path;
+                View::errorCode(404);
             }
         } else {
-            echo 'Маршрут не найден! Страница 404.';
+            View::errorCode(404);
         }
     }
 }
