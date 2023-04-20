@@ -2,7 +2,6 @@
 
 require 'app/lib/dev.php';
 //include "vendor/autoload.php";
-use app\core\Router;
 
 spl_autoload_register(function ($class) {
     $path = str_replace('\\', '/', $class.'.php');
@@ -13,5 +12,5 @@ spl_autoload_register(function ($class) {
 
 session_start();
 
-$router = new Router();
+$router = new \app\core\Router();
 $router->run();
