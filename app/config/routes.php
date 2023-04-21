@@ -9,6 +9,10 @@ return [
         'controller' => 'main',
         'action' => 'contact'
     ],
+    'sendform' => [
+        'controller' => 'main',
+        'action' => 'sendform'
+    ],
     'account/login' => [
         'controller' => 'account',
         'action' => 'login'

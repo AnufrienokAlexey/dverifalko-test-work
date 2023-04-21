@@ -4,5 +4,6 @@ return [
     'host'     => 'localhost',
     'dbname'   => 'dverifalko',
     'user'     => 'root',
-    'password' => ''
+    'password' => '',
+    'charset'  => 'utf8',
 ];

@@ -1,5 +1,7 @@
 <?php
 
+use app\lib\Connect;
+
 require 'app/lib/dev.php';
 //include "vendor/autoload.php";
 
