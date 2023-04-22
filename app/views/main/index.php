@@ -108,5 +108,73 @@
             </div>
             <button type="submit" class="btn btn-primary">Отправить комплектацию</button>
         </form>
+        <h2 class="params-title">Написать боту</h2>
+        <form id="form-contact" method="POST" class="contact-form" autocomplete="off" enctype="multipart/form-data">
+
+            <p class="contact-form__title">Закажите обратный звонок и наш консультант свяжется с вами</p>
+
+            <div class="preloader"></div>
+            <p class="contact-form__message"></p>
+
+            <!-- Поле с именем -->
+            <div class="contact-form__input-wrapper contact-form__input-wrapper_name">
+                <input name="name" type="text" class="contact-form__input contact-form__input_name"
+                       placeholder="Введите ваше имя">
+            </div>
+
+            <!-- Поле с телефоном -->
+            <div class="contact-form__input-wrapper contact-form__input-wrapper_phone">
+                <input name="phone" type="tel" class="contact-form__input contact-form__input_phone"
+                       placeholder="Введите ваш телефон">
+            </div>
+
+            <!-- Поле с выбором файла -->
+            <div class="contact-form__input-wrapper">
+                <input type="file" name="files[]" id="contact-form__input_file"
+                       class="contact-form__input contact-form__input_file" multiple>
+                <label for="contact-form__input_file" class="contact-form__file-button">
+                    <span class="contact-form__file-text">Выберите файл</span>
+                </label>
+            </div>
+
+            <!--Поле с темой в письме-->
+            <input name="theme" type="hidden" class="contact-form__input contact-form__input_theme"
+                   value="Заявка с сайта dverifalko.ru">
+
+            <!--Кнопка отправки формы-->
+            <button type="submit" class="contact-form__button">Отправить</button>
+
+        </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./app/views/main/telegramform/js/telegramform.js"></script>
+    <script>
+
+        // Кастомизация поля с файлом. Подробнее тут: https://smartlanding.biz/stilizaciya-input-type-file.html
+        let inputs = document.querySelectorAll('.contact-form__input_file');
+        Array.prototype.forEach.call(inputs, function (input) {
+            let label = input.nextElementSibling,
+                labelVal = label.querySelector('.contact-form__file-text').innerText;
+
+            input.addEventListener('change', function (e) {
+                let countFiles = '';
+                if (this.files && this.files.length >= 1)
+                    countFiles = this.files.length;
+
+                if (countFiles)
+                    label.querySelector('.contact-form__file-text').innerText = 'Выбрано файлов: ' + countFiles;
+                else
+                    label.querySelector('.contact-form__file-text').innerText = labelVal;
+            });
+        });
+
+    </script>
+
+    <!-- Маска ввода номера телефона. Подробнее тут: https://smartlanding.biz/maski-vvoda-telefona.html -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+        $(function () {
+            $('input[type="tel"]').mask('+7(000)000-00-00');
+        });
+    </script>
 </div>

@@ -1,5 +1,6 @@
 <?php
-
+//$path = $_SERVER['DOCUMENT_ROOT'] . '/dverifalko-test-work/app/views/main/telegramform/tmp/';
+//debug($path);
 return [
     '' => [
         'controller' => 'main',
