@@ -1,10 +1,10 @@
 <?php
 
 // Токен
-const TOKEN = '6246619275:AAFhpIHjVq9w82Mz8j6pEaPEyZPq5dHnwIo';
+//const TOKEN = '6246619275:AAFhpIHjVq9w82Mz8j6pEaPEyZPq5dHnwIo';
 
 // ID чата
-const CHATID = '-919708435';
+//const CHATID = '-919708435';
 
 // Массив допустимых значений типа файла.
 $types = array('image/gif', 'image/png', 'image/jpeg', 'application/pdf');
